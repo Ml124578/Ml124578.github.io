@@ -1,0 +1,18 @@
+@media (min-width: 720px) {
+ 
+.FromContainer{
+			width: 40%;
+		      }
+
+}
+@media (min-width: 720px){
+.FooterText{
+    font-size: 0.8rem;
+}
+}
+@media (max-width: 720px){
+    .FooterText{
+        font-size: 0.5rem;
+    }
+    }
+

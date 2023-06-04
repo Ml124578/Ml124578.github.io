@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PAGE</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		var geneData = []; // 用于存储gene.json中的基因数据
+
+		function loadJSON(callback) {
+			var xobj = new XMLHttpRequest();
+			xobj.overrideMimeType("application/json");
+			xobj.open('GET', 'gene.json', true);
+			xobj.onreadystatechange = function () {
+				if (xobj.readyState === 4 && xobj.status === 200) {
+					callback(xobj.responseText);
+				}
+			};
+			xobj.send(null);
+		}
+
+		function processData(data) {
+			var jsonData = JSON.parse(data);
+			geneData = jsonData.gene; // 将gene.json中的基因数据存储到geneData变量中
+		}
+
+		loadJSON(function (response) {
+			processData(response);
+		});
+	</script>
+
+	<script>
+		function searchGene(event) {
+			event.preventDefault();
+			var userInput = document.getElementById("search-input").value.toUpperCase().trim();
+
+			if (userInput === "") {
+				alert("The gene name requirement cannot be empty");
+				return false;
+			}
+
+			var geneFound = false;
+
+			// 检查基因名称是否存在于geneData中
+			for (var i = 0; i < geneData.length; i++) {
+				if (geneData[i].name.toUpperCase() === userInput || geneData[i].ensemblId === userInput) {
+					window.location.href = "./component/" + geneData[i].name + ".html";
+					geneFound = true;
+					break;
+				}
+			}
+
+			if (!geneFound) {
+				alert("Gene does not exist!");
+			}
+
+			return false;
+		}
+
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg  bg-primary navbar-dark ">
+		<div class="container">
+			<a class="navbar-brand fs-2 fw-bold" href="index.html">SGPA</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Datasets</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Abrr.</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Help</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Logs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contacts.html">Contacts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://zhanglab.eu.org/">ZhangLab</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section class="p-5 text-center">
+		<div class="container">
+			<div class="d-felx">
+				<div>
+					<h1>SGPA</h1>
+					<p>Single Gene Pan-cancer Atlas</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="p-5">
+		<div class="container FromContainer">
+			<form class="row gy-4 needs-validation" method="GET" novalidate>
+				<div class="col-12">
+					<label for="search-input" class="form-label">Typing a gene:</label>
+					<input type="text" class="form-control" id="search-input" placeholder='e.g. ZMIZ1/ENSG00000108175' name="geneName"
+						oninput="this.value=this.value.toUpperCase()">
+				</div>
+				<div class="col-12 text-center pt-5 ">
+					<button type="submit" class="btn btn-primary" id="search-button"
+						onclick="searchGene(event)">Search</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer class="p-5 mt-5 text-center ">
+		<div class="container ">
+			<p class="FooterText">Please Cite Us:J Z Chen,P Y Zhang,L Ma and H Y Zhang,SPGA:an integrative and
+				comprehensive pan-cancer analysis results database of single genes in human tumors(2023),To be
+				Piblished.<br>
+				Copyright©2023 ZhangLab at University of Science and Technology Beijing.All rights reserved.</p>
+		</div>
+	</footer>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		// 用于禁用无效字段的示例 JavaScript，如果存在无效字段，则禁止表单提交
+		(function () {
+			'use strict'
+
+			// 获取所有需要应用自定义 Bootstrap 验证样式的表单
+			var forms = document.querySelectorAll('.needs-validation')
+
+			// 遍历表单并阻止提交
+			Array.prototype.slice.call(forms)
+				.forEach(function (form) {
+					form.addEventListener('submit', function (event) {
+						if (!form.checkValidity()) {
+							event.preventDefault()
+							event.stopPropagation()
+						}
+						form.classList.add('was-validated')
+					}, false)
+				})
+		})()
+	</script>
+</body>
+
+</html>

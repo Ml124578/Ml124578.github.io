@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PAGE</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../asset/result-js-css/results-front.js"></script>
+</head>
+<link rel="stylesheet" href="../asset/result-js-css/results.css">
+<body>
+	<nav class="navbar navbar-expand-lg  bg-primary navbar-dark ">
+		<div class="container">
+			<a class="navbar-brand fs-2 fw-bold" href="../index.html">SGPA</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="../index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Datasets</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Abrr.</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Help</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Logs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../contacts.html">Contacts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="https://zhanglab.eu.org/">ZhangLab</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 ">
+					<form class=" pt-5 mb-5 needs-validation" action="#" novalidate>
+						<div class="row justify-content-center">
+							<div class="col-5">
+								<input type="text" id="search-input" class="form-control" placeholder="typing a gene:"
+									name="geneName" required oninput="this.value=this.value.toUpperCase()">
+							</div>
+							<div class="col-2 ps-2">
+								<button type="submit" class="btn btn-primary" id="search-button"
+									onclick="searchGene(event)">Search</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+
+					<nav id="navbar-example3" class="navbar navbar-light bg-light flex-column asideNav">
+						<div id="search-result">
+							/
+						</div>
+						<nav class="nav nav-pills flex-column pt-3 leftBox">
+							<a class="nav-link" href="#item-0" target="result">Summary</a>
+							<a class="nav-link" href="#item-1" target="result">Gene Expression</a>
+							<a class="nav-link" href="#item-2" target="result">Protein Expression</a>
+							<a class="nav-link" href="#item-3" target="result">Stage Plots</a>
+							<a class="nav-link" href="#item-4" target="result">DNA Methylation</a>
+							<a class="nav-link" href="#item-5" target="result">Survival</a>
+							<a class="nav-link" href="#item-6" target="result">Immune-related</a>
+							<a class="nav-link" href="#item-7" target="result">Drug-Sensitivity</a>
+						</nav>
+					</nav>
+				</div>
+				<div class="col-9" id="Result">
+					<div id="template">
+						<div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0"
+							class='scrollspy-example-2'>
+							<div id="item-0">
+								<h4 class="pt-3 pb-3">Summary</h4>
+								<p>Gene: TEMPLATE</p><!--基因名 -->
+								<p>Full Name: erb-b2 receptor tyrosine kinase 2</p><!--Full Name-->
+								<p>Alias: CD340, HER-2, HER-2/neu, HER2, MLN 19, NEU, NGL, TKR1</p><!--Synonyms-->
+								<p>Ensembl ID: ENSG00000141736.13</p><!--Ensembl ID -->
+								<p>Introdcution : Predicted to enable DNA binding activity and zinc ion binding activity. Predicted to be involved in histone H4 acetylation. Located in nucleolus and nucleoplasm. [provided by Alliance of Genome Resources, Apr 2022]
+									Predicted to enable DNA binding activity and zinc ion binding activity. Predicted to be involved in histone H4 acetylation. Part of ATAC complex. Is expressed in ureter. Orthologous to human ZZZ3 (zinc finger ZZ-type containing 3). [provided by Alliance of Genome Resources, Apr 2022]
+									Predicted to enable zinc ion binding activity. Predicted to be involved in histone H4 acetylation. Predicted to be located in nucleolus and nucleoplasm. Predicted to be part of ATAC complex. Orthologous to human ZZZ3 (zinc finger ZZ-type containing 3). [provided by Alliance of Genome Resources, Apr 2022]
+									Predicted to enable zinc ion binding activity. Predicted to be involved in histone H4 acetylation. Orthologous to human ZZZ3 (zinc finger ZZ-type containing 3). [provided by Alliance of Genome Resources, Apr 2022]
+								</p><!--Introdcution-->
+								<div><!--API-->
+									<p>Search this gene in:</p>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">GeneCard</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">NCBI</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">Ensembl</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">EBI</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">OMIM</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">COSMIC</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">HPA</a>
+									<a class="btn btn-primary btn-sm" href="https://zhanglab.eu.org/" role="button">DrugBank</a>
+								</div>
+							</div>
+							<div id="item-1" class="pt-5">
+								<div class="">
+<!--1-->							<h4>Gene Expression</h4>
+								</div>
+								<div class="pt-3">
+									<p>原始数据来源于TCGA</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center">
+								<!--	 <img id="svg-image"
+										src="/asset/gene/ERBB2/gene expression/A1BGexpressionpancancer_Plot.svg"
+										alt="wrong" class="img-fluid">   -->
+										<img src="/asset/gene/ERBB2/gene expression/A1BGexpressionpancancer_Plot.svg" onclick="showImage(this)" data-image="/asset/gene/ERBB2/gene expression/A1BGexpressionpancancer_Plot.svg" alt="wrong" class="img-fluid"/>
+								</div><!--图片路径替换-->
+								<div class="pt-3">
+									<p>原始数据来源于TCGA和GTEX</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center">
+										<img src="/asset/gene/ERBB2/gene expression/ZZZ3expressionpancancer_Plot.svg" onclick="showImage(this)" data-image="/asset/gene/ERBB2/gene expression/ZZZ3expressionpancancer_Plot.svg" alt="wrong" class="img-fluid"/>
+								</div><!--图片路径替换-->
+							</div>
+							<div id="item-2">
+								<div class="pt-5">
+<!--2-->						   <h4>Protein Expression</h4>
+								</div>
+								<div class="pt-3">
+									<p>原始数据来源于TCGA和GTEX</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center ">
+									<embed src="/asset/gene/ERBB2/protein expression/ssurvival.ACC.pdf"
+									type="application/pdf" width="100%" height="600px" />
+								</div><!--图片路径替换-->
+							</div>
+							<div id="item-3">
+								<div class="pt-5">
+<!--3-->							<h4>Stage Plots</h4>
+								</div>
+								<div class="pt-3">
+									<p>原始数据来源于TCGA和GTEX</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center">
+									<embed src="/asset/gene/ERBB2/stage plots/Stage_UVM_ZZZ3expression.pdf"
+										type="application/pdf" width="100%" height="600px"/>
+								</div><!--图片路径替换-->
+							</div>
+							<div id="item-4">
+								<div class="pt-5">
+<!--4-->							<h4>DNA Methylation</h4>
+								</div>
+								<div class="pt-3">
+									<p>原始数据来源于TCGA和GTEX</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center">
+									<!--<img src="" alt="wrong" class="img-fluid">-->
+								</div><!--图片路径替换-->
+							</div>
+							<div id="item-5">
+								<div class="pt-5">
+<!--5-->							<h4>Survival</h4>
+								</div>
+								<div class="pt-3">
+									<p>Overview: Higher mRNA expression of {Gene} is a high/low risk in {Cancers}.</p>
+								</div>
+								<div class="d-flex justify-content-center">
+									<table class="table table-striped table-hover">
+											<thead>
+											<tr>
+											<th scope="col"></th>
+											<th scope="col">p-value of KM</th>
+											<th scope="col">HR of uni. Cox</th>
+											<th scope="col">p-value of uni. Cox</th>
+											<th scope="col">Risk</th>
+											<th scope="col">Image</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+											<th scope="row">ACC</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>/</td>
+											<td><!--<a href="/asset/gene/ERBB2/gene expression/A1BGexpressionpancancer_Plot.svg">KM</a>&nbsp;
+												<a href="/asset/gene/ERBB2/gene expression/A1BGexpressionpancancer_Plot.svg">Uni. Cox</a> -->
+												<a href="#" onclick="showImage(this)" data-image="/asset/gene/ERBB2/gene expression/ZZZ3expressionpancancer_Plot.svg">KM</a>
+												<a href="/asset/gene/ERBB2/Survival/KM/ZNF416expression_ACC_ImmuneScore_0.000250560128356481.pdf" target="_blank">Uni.Cox</a>
+											</td>
+											</tr>
+											<tr>
+											<th scope="row">BLCA</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>Low</td>
+											<td>#</td>
+											</tr>
+											<tr>
+											<th scope="row">BRCA</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>High</td>
+											<td>#</td>
+											</tr>
+											<tr>
+											<th scope="row">CESC</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>High</td>
+											<td>#</td>
+											</tr>
+											<tr>
+											<th scope="row">CHOL</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>High</td>
+											<td>#</td>
+											</tr>
+											<tr>
+											<th scope="row">COAD</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>High</td>
+											<td>#</td>
+											</tr>
+											<tr>
+											<th scope="row">DLBC</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>High</td>
+											<td>#</td>
+											</tr>
+											<tr>
+											<th scope="row">ESCA</th>
+											<td>#</td>
+											<td>#</td>
+											<td>#</td>
+											<td>High</td>
+											<td>#</td>
+											</tr>
+											</tbody>
+										</table><!--替换表格文本td，替换图片相对路径-->
+								</div>
+							</div>
+							<div id="item-6">
+								<div class="pt-5">
+<!--6-->							<h4>Immune-related</h4>
+								</div>
+								<div class="pt-3">
+									<p>原始数据来源于TCGA和GTEX</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center">
+									<!--<img src="/asset/v2-4dabed2e42fee0605168d0ce84e22c66_720w.jpg" alt="wrong"
+										class="img-fluid">-->
+								</div><!--替换图片路径-->
+							</div>
+							<div id="item-7">
+								<div class="pt-5">
+<!--7-->							<h4>Drug-Sensitivity</h4>
+								</div>
+								<div class="pt-3">
+									<p>原始数据来源于TCGA和GTEX</p><!--overview替换-->
+								</div>
+								<div class="d-flex justify-content-center">
+									<!--<img src="/asset/v2-bc13c63acc7e7c1303ca0805d1348882_r.jpg" alt="wrong"
+										class="img-fluid">-->
+								</div><!--替换图片路径-->
+							</div>
+							<div id="item-8">
+								<table class="table table-striped table-hover table-bordered">
+									<caption>List of users</caption>
+									<thead>
+										<tr>
+											<th>Gene Symbol</th>
+											<th>Gene ID</th>
+											<th>PCC</th>
+										</tr>
+									</thead>
+									<tbody id="table-body">
+										<tr>
+											<td><a href="https://zhanglab.eu.org/"
+													class="link-success text-decoration-none" target="_top">13205</a>
+											</td>
+											<td>张三</td>
+											<td>25</td>
+										</tr>
+										<tr>
+											<td><a href="https://zhanglab.eu.org/"
+													class="link-success text-decoration-none">20320</a>
+											</td>
+											<td>李四</td>
+											<td>3015161616135165181516</td>
+										</tr>
+										<tr>
+											<td><a href="https://zhanglab.eu.org/"
+													class="link-success text-decoration-none">35046</a>
+											</td>
+											<td>王五</td>
+											<td>35</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>赵六</td>
+											<td>40</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>钱七</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>孙八</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>孙八</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>孙八</td>
+											<td>50</td>
+										</tr>
+									</tbody>
+								</table><!--替换表格td-->
+								<nav>
+									<ul class="pagination justify-content-end" id="pagination">
+										<li class="page-item">
+											<a class="page-link">Previous</a>
+										</li>
+										<li class="page-item"><a class="page-link">1</a></li>
+										<li class="page-item"><a class="page-link">2</a></li>
+										<li class="page-item"><a class="page-link">3</a></li>
+										<li class="page-item">
+											<a class="page-link">Next</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+	</section>
+
+	<footer class="p-5 mt-5 text-center ">
+		<div class="container ">
+			<p class="FooterText">Please Cite Us:J Z Chen,P Y Zhang,L Ma and H Y Zhang,SPGA:an integrative and
+				comprehensive pan-cancer analysis results database of single genes in human tumors(2023),To be
+				Piblished.<br>
+				Copyright©2023 ZhangLab at University of Science and Technology Beijing.All rights reserved.</p>
+		</div>
+	</footer>
+
+	<section>
+	<div id="imagePopup" onclick="hideImage()">
+		<img id="popupImage" src="" alt="Popup Image">
+	</div>
+    </section>
+
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../asset/result-js-css/results-end.js"></script>
+</body>
+
+</html>
