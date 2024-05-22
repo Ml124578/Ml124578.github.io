@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+   
+    @keyframes slideUp {
+    from {
+        transform: translateY(200%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.zero-image {
+    animation: slideUp 0.5s ease-out; 
+}
+.container{
+    animation: slideUp 1s ease-out; 
+}
+.end_part{
+    animation: slideUp 1s ease-out; 
+}
+.notification-container {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1s ease-out 0s;
+        }
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .notification-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        .notification-date {
+            font-size: 14px;
+            color: #999;
+        }
+        .notification-image {
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+        }
+        .notification-content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .notification-footer {
+            border-top: 2px solid #eee;
+            padding-top: 10px;
+            margin-top: 20px;
+            text-align: right;
+            color: #999;
+            font-size: 18px;
+            font-family: 'Monotype Corsiva', cursive;
+        }
+        @media (max-width: 768px) {
+    .notification-container {
+        width: 90%; /* 调整宽度以适应小屏幕 */
+        padding: 10px; /* 缩小内边距 */
+        margin: 20px auto; /* 调整外边距 */
+    }
+    .notification-title {
+        font-size: 24px; /* 缩小标题字体大小 */
+    }
+    .notification-content {
+        font-size: 16px; /* 缩小内容字体大小 */
+    }
+    .notification-footer {
+        font-size: 16px; /* 缩小页脚字体大小 */
+    }
+    .notification-image {
+        max-width: 100%; /* 使图片在小屏幕上更具响应性 */
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-container {
+        width: 95%; /* 进一步调整宽度 */
+        padding: 5px; /* 进一步缩小内边距 */
+    }
+    .notification-title {
+        font-size: 20px; /* 更小的字体大小 */
+    }
+    .notification-content {
+        font-size: 14px; /* 更小的内容字体大小 */
+    }
+    .notification-footer {
+        font-size: 14px; /* 更小的页脚字体大小 */
+    }
+    .notification-image {
+        max-width: 100%; /* 使图片在更小屏幕上响应 */
+        height: auto; /* 确保图片高度自适应 */
+    }
+}
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/asset/Publications/Publications_2024.html">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html" style="text-decoration: none;color: white;"><b>Home</b></a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="/News.html"
+                        style="text-decoration: none;color: white;"><b>News</b></a></li>
+                        <li class="breadcrumb-item active"><a href="#"
+                            style="text-decoration: none;color: white;"><b>Main Text</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="notification-container">
+        <div class="notification-header">
+            <h1 class="notification-title">Welcome 2024 Graduate Students</h1>
+            <div class="notification-date">April 24, 2024</div><!--January, February, March, April, May, June, July, August, September, October, November, December-->
+        </div>
+        <div class="notification-content">
+            The admission announcement period for graduate students has ended. Welcome to the 2024 graduate students <b>Yiming Huang, Jialong Wen, Weixin Song, and Ao Wang</b>. <br>
+            Congratulations on your successful admission!
+        </div>
+        <!--<div class="notification-image-container">
+            <img src="#" alt="" class="notification-image">
+        </div>-->
+        <div class="notification-footer">
+            <b>Zhang_lab</b>
+        </div>
+    </div>
+    <div class="container mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

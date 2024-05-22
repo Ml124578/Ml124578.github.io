@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+
+    #yearNavbar .navbar-nav .nav-link:hover {
+        color: #268ac8;
+    }
+
+    #yearNavbar .nav-link.active {
+        color: #268ac8;
+    }
+
+    #yearNavbar {
+        font-size: 3vh;
+    }
+
+    .Publications_p p {
+        margin-bottom: 5px;
+
+    }
+
+    .second_p {
+        color: #575757;
+    }
+
+    .Publications_content {
+        justify-content: center;
+        display: flex;
+        width: 90vw;
+        /* 使用视口宽度的百分比 */
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border: none;
+        width: 100%;
+        /* 卡片宽度为其容器的100% */
+    }
+
+    .card img {
+        border-radius: 50%;
+        margin-right: 2vw;
+    }
+
+    @media (max-width: 550px) {
+        .card img {
+            width: 30vw;
+            height: 30vw;
+        }
+
+        .Publications_p {
+            font-size: 3vw;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .card img {
+            width: 10vw;
+            height: 10vw;
+        }
+
+        .Publications_p {
+            font-size: 1.2vw;
+        }
+    }
+
+    @media (min-width: 550px) and (max-width: 1024px) {
+        .card img {
+            width: 15vw;
+            height: 15vw;
+        }
+
+        .Publications_p {
+            font-size: 1.8vw;
+        }
+    }
+
+    #yearNavbar .navbar-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        /* 防止链接换行 */
+    }
+
+    /* 小屏幕设置 */
+    @media (max-width: 768px) {
+        #yearNavbar .navbar-nav {
+            flex-wrap: wrap;
+            /* 允许换行 */
+        }
+
+        #yearNavbar .navbar-nav .nav-link {
+            flex: 0 0 33.33%;
+            /* 设置每个链接占行宽的三分之一 */
+            text-align: center;
+            /* 可选，使链接在其框内居中 */
+        }
+    }
+
+    .article-content {
+        text-align: center;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .article-section {
+        margin-bottom: 20px;
+    }
+
+    .abstract {
+        text-align: justify;
+    }
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/ch-zhanglab/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/ch-zhanglab/index.html">主页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="/ch-zhanglab/asset/Publications/Publications_2024.html">科研论文</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/News.html">组内动态</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/member.html">组内成员</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/contact.html">联系我们</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/admission.html">招生</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/ch-zhanglab/index.html"
+                        style="text-decoration: none;color: white;"><b>主页</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a
+                        href="/ch-zhanglab/asset/Publications/Publications_2021.html"
+                        style="text-decoration: none;color: white;"><b>科研论文_2021</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#"
+                        style="text-decoration: none;color: white;"><b>正文</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5">
+
+        <div class="article-content px-5">
+            <h1 class="article-section pb-2">Rational Design of Nonbonded Point Charge Models for Monovalent Ions with
+                Lennard-Jones 12–6 Potential</h1>
+            <h4 class="article-section pb-2">Yejie Qiu; Yang Jiang; Yongguang Zhang; Haiyang Zhang</h4>
+            <div class="article-section">
+                <h5>Abstract</h5>
+                <p class="abstract">
+                    Ions are of central importance in nature, and a variety of potential models was proposed to model
+                    ions in different phases for an in-depth exploration of ion-related systems. Here, we developed
+                    point charge models of 14 monovalent ions with the traditional 12–6 Lennard-Jones (LJ) potential for
+                    use in conjunction with 11 water models of TIP3P, OPC3, SPC/E, SPC/Eb, TIP3P-FB, a99SB-disp,
+                    TIP4P-Ew, OPC, TIP4P/2005, TIP4P-D, and TIP4P-FB. The designed models reproduced the real hydration
+                    free energy (HFE) of ions and the ion-oxygen distance (IOD) in the first hydration shell accurately
+                    and simultaneously, a performance similar to the previously reported 12–6–4 LJ-type ion models (12–6
+                    LJ plus an attractive C4 term for cations or a repulsive one for anions). This work, along with our
+                    previous work on di-, tri-, and tetravalent metal cations (J. Chem. Inf. Model. 2021, 61, 4031–4044;
+                    J. Chem. Inf. Model. 2021, 61, 4613–4629), demonstrates the feasibility of the simple 12–6 LJ
+                    potential in ion modeling. In order for the 12–6 LJ potential to reproduce both the HFE and IOD, the
+                    LJ R parameters need to be close to Shannon’s ionic radii for the highly charged cations and to the
+                    Stokes’s van der Waals (vdW) radii for the monovalent ions. With an additional C4 term, the R
+                    parameters of 12–6–4 LJ ion models agree well with the Stokes’s vdW radii and have a more physical
+                    meaning. It appears that the C4 term can be merged into the 12–6 LJ potential by a rational tuning
+                    of R and the LJ well depth. Simulations of the osmotic coefficients of alkali chloride solutions and
+                    the properties of gaseous and solid alkali halides indicate the necessity of further optimizing
+                    ion–ion interactions via, for instance, targeting more properties or using a more physical
+                    (polarizable) model.
+                </p>
+            </div>
+            <div class="article-section">
+                <img src="/asset/pic/article_pic/images_medium_jp1c09103_0012.webp" alt="Article Image"
+                    class="article-image">
+            </div>
+            <div style="text-align: left;">
+                <a href="https://doi.org/10.1021/acs.jpcb.1c09103" target="_blank"><b>DOI:
+                        10.1021/acs.jpcb.1c09103</b></a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

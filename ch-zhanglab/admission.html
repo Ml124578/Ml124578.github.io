@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+
+    .breadcrumb {
+        padding-top: 10vh;
+    }
+
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+
+    .container_Admission {
+        width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        animation: slideUp 1s ease-out;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+        color: #268ac8;
+        font-family: 'Monotype Corsiva', cursive;
+    }
+
+    h1 {
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .responsive-img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/ch-zhanglab/index.html"><img src="/asset/pic/bk_logo.png"
+                        alt="">&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/ch-zhanglab/index.html">主页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/asset/Publications/Publications_2024.html">科研论文</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/News.html">组内动态</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/member.html">组内成员</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/contact.html">联系我们</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">招生</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="px-5 pb-2">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/ch-zhanglab/index.html"
+                        style="text-decoration: none;color: white;"><b>主页</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/ch-zhanglab/admission.html"
+                        style="text-decoration: none;color: white;"><b>招生</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container_Admission pt-5 ">
+        <h1 style="font-family:'Monotype Corsiva', cursive;">Zhang Lab</h1>
+        <h2>关于我们</h2>
+        <p>欢迎来到Zhang_lab！我们的实验室隶属于北京科技大学化学与生物工程学院，主要研究方向是计算分子生物学。我们的关键研究领域包括分子模拟在金属离子和生物大分子系统中的应用（特别是分子动力学模拟和分子对接）、计算机辅助药物设计以及生物信息学相关研究。我们热烈欢迎对药物设计、计算生物学和分子模拟感兴趣的本科生和研究生加入Zhang_lab。
+        </p>
+        <img class="responsive-img" src="/asset/pic/Research_Direction.webp" alt="">
+        <h2>招生要求</h2>
+        <p>我们欢迎对计算领域研究充满热情的优秀学生加入我们的实验室。招生要求如下：</p>
+        <ul>
+            <li>具有相关研究经验或对我们的研究领域有兴趣</li>
+            <li>英语熟练，能够阅读和撰写科学论文</li>
+            <li>具备良好的团队精神和沟通能力</li>
+        </ul>
+        <p>联系方式: <b>zhanghy@ustb.edu.cn</b>.</p>
+    </div>
+    <div class="container mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

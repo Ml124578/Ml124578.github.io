@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+
+    #yearNavbar .navbar-nav .nav-link:hover {
+        color: #268ac8;
+    }
+
+    #yearNavbar .nav-link.active {
+        color: #268ac8;
+    }
+
+    #yearNavbar {
+        font-size: 3vh;
+    }
+
+    .Publications_p p {
+        margin-bottom: 5px;
+
+    }
+
+    .second_p {
+        color: #575757;
+    }
+
+    .Publications_content {
+        justify-content: center;
+        display: flex;
+        width: 90vw;
+        /* 使用视口宽度的百分比 */
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border: none;
+        width: 100%;
+        /* 卡片宽度为其容器的100% */
+    }
+
+    .card img {
+        border-radius: 50%;
+        margin-right: 2vw;
+    }
+
+    @media (max-width: 550px) {
+        .card img {
+            width: 30vw;
+            height: 30vw;
+        }
+
+        .Publications_p {
+            font-size: 3vw;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .card img {
+            width: 10vw;
+            height: 10vw;
+        }
+
+        .Publications_p {
+            font-size: 1.2vw;
+        }
+    }
+
+    @media (min-width: 550px) and (max-width: 1024px) {
+        .card img {
+            width: 15vw;
+            height: 15vw;
+        }
+
+        .Publications_p {
+            font-size: 1.8vw;
+        }
+    }
+
+    #yearNavbar .navbar-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        /* 防止链接换行 */
+    }
+
+    /* 小屏幕设置 */
+    @media (max-width: 768px) {
+        #yearNavbar .navbar-nav {
+            flex-wrap: wrap;
+            /* 允许换行 */
+        }
+
+        #yearNavbar .navbar-nav .nav-link {
+            flex: 0 0 33.33%;
+            /* 设置每个链接占行宽的三分之一 */
+            text-align: center;
+            /* 可选，使链接在其框内居中 */
+        }
+    }
+
+    .article-content {
+        text-align: center;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .article-section {
+        margin-bottom: 20px;
+    }
+
+    .abstract {
+        text-align: justify;
+    }
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="/asset/Publications/Publications_2024.html">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html"
+                        style="text-decoration: none;color: white;"><b>Home</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a
+                        href="/asset/Publications/Publications_2023.html"
+                        style="text-decoration: none;color: white;"><b>Publications_2023</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#"
+                        style="text-decoration: none;color: white;"><b>Main text</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5">
+
+        <!--修改-->
+        <div class="article-content px-5">
+            <h1 class="article-section pb-2">Repurposing of World-Approved Drugs for Potential Inhibition against Human
+                Carbonic Anhydrase I: A Computational Study</h1>
+            <h4 class="article-section pb-2">Nannan Zheng; Wanyun Jiang; Puyu Zhang; Le Ma; Junzhao Chen; Haiyang Zhang
+            </h4>
+            <div class="article-section">
+                <h5>Abstract</h5>
+                <p class="abstract">
+                    Human carbonic anhydrases (hCAs) have enzymatic activities for reversible hydration of CO2 and are
+                    acknowledged as promising targets for the treatment of various diseases. Using molecular docking and
+                    molecular dynamics simulation approaches, we hit three compounds of methyl
+                    4-chloranyl-2-(phenylsulfonyl)-5-sulfamoyl-benzoate (84Z for short), cyclothiazide, and
+                    2,3,5,6-tetrafluoro-4-piperidin-1-ylbenzenesulfonamide (3UG for short) from the existing hCA I
+                    inhibitors and word-approved drugs. As a Zn2+-dependent metallo-enzyme, the influence of Zn2+ ion
+                    models on the stability of metal-binding sites during MD simulations was addressed as well. MM-PBSA
+                    analysis predicted a strong binding affinity of −18, −16, and −14 kcal/mol, respectively, for these
+                    compounds, and identified key protein residues for binding. The sulfonamide moiety bound to the Zn2+
+                    ion appeared as an essential component of hCA I inhibitors. Vina software predicted a relatively
+                    large (unreasonable) Zn2+–sulfonamide distance, although the relative binding strength was
+                    reproduced with good accuracy. The selected compounds displayed potent inhibition against other hCA
+                    isoforms of II, XIII, and XIV. This work is valuable for molecular modeling of hCAs and further
+                    design of potent inhibitors.
+                </p>
+            </div>
+            <div class="article-section">
+                <img src="/asset/pic/article_pic/ijms-24-12619-g001-550.webp" alt="Article Image"
+                    class="article-image">
+            </div>
+            <div style="text-align: left;">
+                <a href="https://doi.org/10.3390/ijms241612619" target="_blank"><b>DOI: 10.3390/ijms241612619</b></a>
+            </div>
+            <!--修改-->
+        </div>
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

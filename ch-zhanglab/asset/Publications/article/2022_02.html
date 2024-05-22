@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+
+    #yearNavbar .navbar-nav .nav-link:hover {
+        color: #268ac8;
+    }
+
+    #yearNavbar .nav-link.active {
+        color: #268ac8;
+    }
+
+    #yearNavbar {
+        font-size: 3vh;
+    }
+
+    .Publications_p p {
+        margin-bottom: 5px;
+
+    }
+
+    .second_p {
+        color: #575757;
+    }
+
+    .Publications_content {
+        justify-content: center;
+        display: flex;
+        width: 90vw;
+        /* 使用视口宽度的百分比 */
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border: none;
+        width: 100%;
+        /* 卡片宽度为其容器的100% */
+    }
+
+    .card img {
+        border-radius: 50%;
+        margin-right: 2vw;
+    }
+
+    @media (max-width: 550px) {
+        .card img {
+            width: 30vw;
+            height: 30vw;
+        }
+
+        .Publications_p {
+            font-size: 3vw;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .card img {
+            width: 10vw;
+            height: 10vw;
+        }
+
+        .Publications_p {
+            font-size: 1.2vw;
+        }
+    }
+
+    @media (min-width: 550px) and (max-width: 1024px) {
+        .card img {
+            width: 15vw;
+            height: 15vw;
+        }
+
+        .Publications_p {
+            font-size: 1.8vw;
+        }
+    }
+
+    #yearNavbar .navbar-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        /* 防止链接换行 */
+    }
+
+    /* 小屏幕设置 */
+    @media (max-width: 768px) {
+        #yearNavbar .navbar-nav {
+            flex-wrap: wrap;
+            /* 允许换行 */
+        }
+
+        #yearNavbar .navbar-nav .nav-link {
+            flex: 0 0 33.33%;
+            /* 设置每个链接占行宽的三分之一 */
+            text-align: center;
+            /* 可选，使链接在其框内居中 */
+        }
+    }
+
+    .article-content {
+        text-align: center;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .article-section {
+        margin-bottom: 20px;
+    }
+
+    .abstract {
+        text-align: justify;
+    }
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/ch-zhanglab/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/ch-zhanglab/index.html">主页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="/ch-zhanglab/asset/Publications/Publications_2024.html">科研论文</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/News.html">组内动态</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/member.html">组内成员</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/contact.html">联系我们</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/admission.html">招生</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/ch-zhanglab/index.html"
+                        style="text-decoration: none;color: white;"><b>主页</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a
+                        href="/ch-zhanglab/asset/Publications/Publications_2022.html"
+                        style="text-decoration: none;color: white;"><b>科研论文_2022</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#"
+                        style="text-decoration: none;color: white;"><b>正文</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5">
+
+        <div class="article-content px-5">
+            <h1 class="article-section pb-2">Virtual Screening of FDA-Approved Drugs for Enhanced Binding with
+                Mitochondrial Aldehyde Dehydrogenase</h1>
+            <h4 class="article-section pb-2">Boqian Zhou; Yongguang Zhang; Wanyun Jiang; Haiyang Zhang</h4>
+            <div class="article-section">
+                <h5>Abstract</h5>
+                <p class="abstract">
+                    Mitochondrial aldehyde dehydrogenase (ALDH2) is a potential target for the treatment of substance
+                    use disorders such as alcohol addiction. Here, we adopted computational methods of molecular
+                    dynamics (MD) simulation, docking, and molecular mechanics Poisson–Boltzmann surface area (MM-PBSA)
+                    analysis to perform a virtual screening of FDA-approved drugs, hitting potent inhibitors against
+                    ALDH2. Using MD-derived conformations as receptors, butenafine (net charge q = +1 e) and olaparib (q
+                    = 0) were selected as promising compounds with a low toxicity and a binding strength equal to or
+                    stronger than previously reported potent inhibitors of daidzin and CVT-10216. A few negatively
+                    charged compounds were also hit from the docking with the Autodock Vina software, while the MM-PBSA
+                    analysis yielded positive binding energies (unfavorable binding) for these compounds, mainly owing
+                    to electrostatic repulsion in association with a negatively charged receptor (q = −6 e for ALDH2
+                    plus the cofactor NAD+). This revealed a deficiency of the Vina scoring in dealing with strong
+                    charge–charge interactions between binding partners, due to its built-in protocol of not using
+                    atomic charges for electrostatic interactions. These observations indicated a requirement of further
+                    verification using MD and/or MM-PBSA after docking prediction. The identification of key residues
+                    for the binding implied that the receptor residues at the bottom and entrance of the
+                    substrate-binding hydrophobic tunnel were able to offer additional interactions with different
+                    inhibitors such as π-π, π-alkyl, van der Waals contacts, and polar interactions, and that the
+                    rational use of these interactions is beneficial to the design of potent inhibitors against ALDH2.
+                </p>
+            </div>
+            <div class="article-section">
+                <img src="/asset/pic/article_pic/molecules-27-08773-ag-550.webp" alt="Article Image"
+                    class="article-image">
+            </div>
+            <div style="text-align: left;">
+                <a href="https://doi.org/10.3390/molecules27248773" target="_blank"><b>DOI:
+                        10.3390/molecules27248773</b></a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="./asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./asset/js/jquery.min.js"></script>
+    <script src="./asset/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./asset/css/leaflet.css" />
+    <script src="./asset/js/leaflet.js"></script>
+    <script src="./asset/js/maptiler-sdk.umd.js"></script>
+    <link rel="stylesheet" href="./asset/css/maptiler-sdk.css">
+    <script src="./asset/js/leaflet-maptilersdk.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    @keyframes slideUp {
+    from {
+        transform: translateY(200%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.zero-image {
+    animation: slideUp 0.5s ease-out; 
+}
+.container{
+    animation: slideUp 1s ease-out; 
+}
+.end_part{
+    animation: slideUp 1s ease-out; 
+}
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/asset/Publications/Publications_2024.html">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="px-5 pb-2">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html" style="text-decoration: none;color: white;"><b>Home</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/contact.html"
+                        style="text-decoration: none;color: white;"><b>Contact</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5">
+        <div class="">
+            <h3>Contact</h3>
+            <div style="display: flex;" class="pb-2">
+                <img src="/asset/icons/location-dot-solid.svg" alt="" style="width: 2%;">&nbsp;&nbsp;&nbsp;
+                <p style="margin: 0;">Room 112B, Lixuelou,<br>University of Science and Technology Beijing,<br>Xueyuan
+                    Road 30, Haidian District, Beijing, China </p>
+            </div>
+            <div style="display: flex;" class="pb-2">
+                <img src="/asset/icons/at-solid.svg" alt="" style="width: 2%;">&nbsp;&nbsp;&nbsp;
+                <p style="margin: 0;">zhanghy@ustb.edu.cn</p>
+            </div>
+            <div style="display: flex;align-items: center;">
+                <img src="/asset/icons/envelope-regular.svg" alt="" style="width: 2%;">&nbsp;&nbsp;&nbsp;
+                <p style="margin: 0;">100083</p>
+            </div>
+        </div>
+    
+    <div id="map" class="mt-3" style="width: 100%; height: 40vh;"></div>
+</div>
+    <div class="container mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+    <script>
+        const key = 'y5YFNHFjUDXHFhxerquj';
+        const map = L.map('map').setView([39.9900, 116.3520], 14); // 将中心坐标设置为北京科技大学的经纬度，缩放级别设置为 16
+        const mtLayer = L.maptilerLayer({
+          apiKey: key,
+          style: "streets", 
+        }).addTo(map);
+    
+        // 创建一个自定义图标
+        const customIcon = L.icon({
+            iconUrl: './asset/icons/marker-icon.png', // 替换成你的自定义图标路径
+            iconSize: [30, 30], // 图标大小，单位为像素
+            iconAnchor: [15, 15] // 图标锚点，相对于图标的中心
+        });
+    
+        // 创建一个标识，并将其添加到地图上
+        const marker = L.marker([39.9900, 116.3520], { icon: customIcon }).addTo(map);
+        marker.bindPopup("<b>University of Science and Technology Beijing</b>",{ offset: [0, -5] }).openPopup();
+    </script>
+</html>

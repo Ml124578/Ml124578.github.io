@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+
+    #yearNavbar .navbar-nav .nav-link:hover {
+        color: #268ac8;
+    }
+
+    #yearNavbar .nav-link.active {
+        color: #268ac8;
+    }
+
+    #yearNavbar {
+        font-size: 3vh;
+    }
+
+    .Publications_p p {
+        margin-bottom: 5px;
+
+    }
+
+    .second_p {
+        color: #575757;
+    }
+
+    .Publications_content {
+        justify-content: center;
+        display: flex;
+        width: 90vw;
+        /* 使用视口宽度的百分比 */
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        border: none;
+        width: 100%;
+        /* 卡片宽度为其容器的100% */
+    }
+
+    .card img {
+        border-radius: 50%;
+        margin-right: 2vw;
+    }
+
+    @media (max-width: 550px) {
+        .card img {
+            width: 30vw;
+            height: 30vw;
+        }
+
+        .Publications_p {
+            font-size: 3vw;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .card img {
+            width: 10vw;
+            height: 10vw;
+        }
+
+        .Publications_p {
+            font-size: 1.2vw;
+        }
+    }
+
+    @media (min-width: 550px) and (max-width: 1024px) {
+        .card img {
+            width: 15vw;
+            height: 15vw;
+        }
+
+        .Publications_p {
+            font-size: 1.8vw;
+        }
+    }
+
+    #yearNavbar .navbar-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        /* 防止链接换行 */
+    }
+
+    /* 小屏幕设置 */
+    @media (max-width: 768px) {
+        #yearNavbar .navbar-nav {
+            flex-wrap: wrap;
+            /* 允许换行 */
+        }
+
+        #yearNavbar .navbar-nav .nav-link {
+            flex: 0 0 33.33%;
+            /* 设置每个链接占行宽的三分之一 */
+            text-align: center;
+            /* 可选，使链接在其框内居中 */
+        }
+    }
+
+    .article-content {
+        text-align: center;
+    }
+
+    .article-image {
+        max-width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .article-section {
+        margin-bottom: 20px;
+    }
+
+    .abstract {
+        text-align: justify;
+    }
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/ch-zhanglab/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/ch-zhanglab/index.html">主页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="/ch-zhanglab/asset/Publications/Publications_2024.html">科研论文</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/News.html">组内动态</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/member.html">组内成员</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/contact.html">联系我们</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/admission.html">招生</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/ch-zhanglab/index.html"
+                        style="text-decoration: none;color: white;"><b>主页</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a
+                        href="/ch-zhanglab/asset/Publications/Publications_2021.html"
+                        style="text-decoration: none;color: white;"><b>科研论文_2021</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="#"
+                        style="text-decoration: none;color: white;"><b>正文</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5">
+
+        <div class="article-content px-5">
+            <h1 class="article-section pb-2">
+                Force Field Benchmark of Amino Acids. 3. Hydration with Scaled Lennard-Jones Interactions
+            </h1>
+            <h4 class="article-section pb-2">Yejie Qiu; Wenjie Shan; Haiyang Zhang</h4>
+            <div class="article-section">
+                <h5>Abstract</h5>
+                <p class="abstract">
+                    Classical protein force fields were reported with too weak protein–water interactions relative to
+                    protein–protein interactions, leading to more compact structures and artificial protein aggregation.
+                    Here we investigated the impacts of scaled Lennard-Jones (LJ) interactions on the hydration of amino
+                    acids and the simulation of folded and intrinsically disordered proteins (IDPs). The obtained
+                    optimal scaling parameters reproduce accurately hydration free energies of neutral amino acid side
+                    chain analogues and do not affect the compactness and structural stability of folded proteins
+                    significantly. The scaling leads to less compact IDPs and varies from case to case. Strengthening
+                    the interactions between protein and water oxygen or hydrogen atoms by increasing the interacting LJ
+                    well depth (ε) appears more effective than weakening protein–protein interactions by reducing the
+                    interacting dispersion coefficients (C6). We demonstrate that weakening water–water interactions is
+                    a solution as well to obtaining more favorable protein–water interactions in an indirect way,
+                    although modern force fields like Amber ff19SB and a99SB-disp tend to use water models with strong
+                    water–water interactions. This is likely a compromise between strong protein–protein interactions
+                    and strong water–water interactions. Independent optimization of protein force fields and water
+                    models is therefore needed to make both interactions more close to reality, leading to good accuracy
+                    without bias or scaling.
+                </p>
+            </div>
+            <div class="article-section">
+                <img src="/asset/pic/article_pic/images_medium_ci1c00339_0007.webp" alt="Article Image" class="article-image">
+            </div>
+            <div style="text-align: left;">
+                <a href="https://doi.org/10.1021/acs.jcim.1c00339" target="_blank"><b>DOI: 10.1021/acs.jcim.1c00339</b></a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

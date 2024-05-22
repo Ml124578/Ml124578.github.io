@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+    <style>
+ .zero-image {
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.zero-image .bg_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: slideUp 1s ease-out 0s;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.zero-image .bg_img.active {
+    opacity: 1;
+}
+
+.indicator-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.indicator.active {
+    opacity: 1;
+}
+
+        .members_part .end_part {
+            animation: none !important;
+            /* 使用 !important 确保覆盖任何其他可能应用的样式 */
+        }
+
+
+
+
+        .contentbox_part {
+            padding: 20px;
+            justify-content: space-around;
+        }
+
+        .news_left {
+            padding: 0 20px;
+            animation: slideInLeft 1s ease-out 0s forwards;
+        }
+
+        .progress_right {
+            padding: 0 20px;
+            animation: slideInRight 1s ease-out 0s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(200%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-200%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(200%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .progress-more {
+            display: inline-block;
+            color: #000000;
+            padding-left: 35px;
+            background: url(./asset/icons/arrow-right-long-solid.svg) left center no-repeat;
+            margin-top: 20px;
+            transition: all .3s;
+            background-size: 20px;
+        }
+
+        .progress-more:hover {
+            transform: translateX(10px);
+        }
+
+        .progress_right_title a {
+            font-size: 22px;
+            color: #ffffff;
+            display: block;
+            padding-top: 30px;
+            text-decoration: none;
+        }
+
+        .scientific-text h3 {
+            font-size: 16px;
+            color: #333;
+            /*font-weight: lighter;*/
+            font-family: "Nunito";
+            font-family: Lato, Helvetica Neue, sans-serif;
+            line-height: 28px;
+            height: 84px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0 0 17px;
+        }
+
+        .scientific-text .more {
+            font-size: 16px;
+            color: #505050;
+            /*font-weight: lighter;*/
+            font-family: "Nunito";
+            font-family: Lato, Helvetica Neue, sans-serif;
+            text-decoration: underline;
+        }
+
+        .scientific-text {
+            padding: 25px 58px 25px 30px;
+            margin-right: 53px;
+            background: #fff;
+        }
+
+        .scientific-box ul li:hover .scientific-text {
+            box-shadow: 1px 3px 10px #ccc;
+        }
+
+
+        .scientific-box ul li:hover .scientific-time {
+            box-shadow: 1px 3px 10px #ccc;
+        }
+
+
+        .scientific-box ul li {
+            margin-bottom: 5px;
+            position: relative;
+            list-style-type: none;
+        }
+
+        .scientific-time {
+            width: 83px;
+            position: absolute;
+            top: 0px;
+            right: 0;
+            text-align: center;
+            background: #54beff;
+            padding: 8px 0 10px;
+        }
+
+        .scientific-time .month {
+            font-size: 25px;
+            color: #fff;
+            line-height: 30px;
+            font-family: "Georgia";
+        }
+
+        .scientific-time .date {
+            font-size: 30px;
+            color: #fff;
+            line-height: 42px;
+            /*font-weight: lighter;*/
+            font-family: "Nunito";
+            font-family: Lato, Helvetica Neue, sans-serif;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            /* 设置图片宽度为100%，以适应父容器 */
+            height: 560px;
+            /* 设置固定高度，可以根据需要调整 */
+            object-fit: cover;
+            /* 保持图片比例并覆盖整个容器 */
+            transition: transform 0.5s ease;
+            /* 平滑过渡效果 */
+        }
+
+        .carousel-item img:hover {
+            transform: scale(1.1);
+            /* 放大到原始尺寸的110% */
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-family: 'Monotype Corsiva', cursive;
+
+        }
+
+        .navbar-brand img {
+            width: 220px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 23px;
+                /* 减小字体大小 */
+            }
+
+            .navbar-brand img {
+                width: 180px;
+                /* 减小图片宽度 */
+            }
+        }
+
+        /* 更小的屏幕，例如手机竖屏 */
+        @media (max-width: 480px) {
+            .navbar-brand {
+                font-size: 20px;
+                /* 更小的字体大小 */
+            }
+
+            .navbar-brand img {
+                width: 150px;
+                /* 更小的图片宽度 */
+            }
+        }
+
+        .members_part {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/asset/pic/f0df05ffd48a4b3ba86791da59c0b8d6\ \(1\).jpg');
+            background-size: cover;
+            /* 覆盖整个容器 */
+            background-repeat: no-repeat;
+            /* 防止图片重复 */
+            background-position: 50% 37%;
+            /* 图片居中显示 */
+            color: white;
+        }
+
+        .member-info {
+            text-align: center;
+            font-size: 3vh;
+            color: #ffce48;
+        }
+
+        .members_part .member-info a {
+            color: #ffce48;
+            text-decoration: none;
+        }
+
+        .members_part .member-info1 a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .carousel-item .carousel-caption a{
+            text-decoration: none;
+            color: white;
+        }
+      h2{
+        margin: 0;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="zero-image">
+        <img src="/asset/pic/zhanglab.jpg" class="active bg_img">
+        <img src="/asset/pic/zhanglab1.jpg" class="bg_img">
+        <img src="/asset/pic/zhanglab2.jpg" class="bg_img">
+        <div class="indicator-container">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" style="background-color: rgba(0, 0, 0, 0.4);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/asset/pic/bk_logo.png" alt="">&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/asset/Publications/Publications_2024.html">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ch-zhanglab/index.html">中文版本</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="contentbox_part row p-5" style="color:#268ac8;">
+        <div class="news_left col-md-7 col-sm-12">
+            <div style="color: #268ac8; display: flex; align-items: center;" class="py-3">
+                <img src="/asset/icons/news.svg" alt="" width="25px">&nbsp;&nbsp;&nbsp;
+                <h2 >News</h2>
+            </div>
+            <div id="nglViewer" style="width: 100%; height: 100%;"></div>
+        </div>
+        <div class="progress_right col-md-5 col-sm-12"><!--Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec-->
+            <div style="color: #268ac8; display: flex; align-items: center;" class="py-3">
+                <img src="/asset/icons/news.svg" alt="" width="25px">&nbsp;&nbsp;&nbsp;
+                <h2 >News</h2>
+            </div>
+
+            <div class="scientific-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+
+                <ul>
+                    <li>
+                        <div class="scientific-text">
+                            <h3>The Zhang_lab research group website has been optimized and relaunched.</h3>
+                            <a href="/asset/News/5.16.html" class="progress-more">learn more</a>
+                        </div>
+                        <div class="scientific-time">
+                            <div class="date">16</div>
+                            <div class="month">May</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="scientific-text">
+                            <h3>"Computational Insights into Cyclodextrin Inclusion Complexes with the Organophosphorus
+                                Flame Retardant DOPO" has been successfully published in Molecules.</h3>
+                            <a href="/asset/News/5.13.html" class="progress-more">learn more</a>
+                        </div>
+                        <div class="scientific-time">
+                            <div class="date">13</div>
+                            <div class="month">May</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="scientific-text">
+                            <h3>The 2024 cohort of new graduate students</h3>
+                            <a href="/asset/News/4.24.html" class="progress-more">learn more</a>
+                        </div>
+                        <div class="scientific-time">
+                            <div class="date">24</div>
+                            <div class="month">Apr</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="members_part">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-12 d-flex" style="justify-content: center;">
+                    <img src="/asset/icons/person-solid.svg" alt=""
+                            style="width: 20px;"><h2 class="text-center" style="padding-left: 10px;">Members</h2>
+                </div>
+            </div>
+            <div class="row one-line-full">
+                <!-- 教师 -->
+                <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center">
+                    <img class="icon-img me-2" src="./asset/icons/teacher_icon.png" alt="教师"
+                        style="width: 35%; height: auto;">
+                    <div>
+                        <div class="member-info"><a href="/member.html"><strong>1</strong></a></div>
+                        <div class="member-info1"><a href="/member.html">Teacher</a></div>
+                    </div>
+                </div>
+                <!-- 博士生 -->
+                <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center">
+                    <img class="icon-img me-2" src="./asset/icons/phd_icon.png" alt="博士生"
+                        style="width: 35%; height: auto;">
+                    <div>
+                        <div class="member-info"><strong><a href="/member.html">1</strong></a></div>
+                        <div class="member-info1"><a href="/member.html">Ph.D</a></div>
+                    </div>
+                </div>
+                <!-- 硕士生 -->
+                <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center">
+                    <img class="icon-img me-2" src="./asset/icons/master_icon.png" alt="硕士生"
+                        style="width: 35%; height: auto;">
+                    <div>
+                        <div class="member-info"><a href="/member.html"><strong>8</strong></a></div>
+                        <div class="member-info1"><a href="/member.html">Master's</a></div>
+                    </div>
+                </div>
+                <!-- 本科生 
+                <div class="col-lg-2 col-md-4 col-4 d-flex align-items-center">
+                    <img class="icon-img me-2" src="./asset/icons/bachelor_icon.png" alt="本科生"
+                        style="width: 50%; height: auto;">
+                    <div>
+                        <div class="member-info"><a href="/member.html"><strong>2</strong></a></div>
+                        <div class="member-info1"><a href="/member.html">Undergrad</a></div>
+                    </div>
+                </div>-->
+                <!-- 毕业生 -->
+                <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center">
+                    <img class="icon-img me-2" src="./asset/icons/graduate_icon.png" alt="毕业生"
+                        style="width: 35%; height: auto;"><br>
+                    <div>
+                        <div class="member-info"><a href="/member.html"><strong>5</strong></a></div>
+                        <div class="member-info1"><a href="/member.html">Graduate</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="">
+                <div class="d-flex pb-2" style="justify-content: center;">
+                    <img src="/asset/icons/link-solid.svg" alt="" style="width: 25px;">&nbsp;&nbsp;&nbsp;
+                    <h2>Link</h2>
+                </div>
+                <div class="d-flex" style="justify-content:space-between; align-items: center;">
+                    <a href="https://www.ustb.edu.cn/" target="_blank"><img
+                            src="/asset/pic/bk_logo.png" alt=""
+                            style="width: 95%;height: 58px; background-color: rgba(0, 0, 0, 0.5);"></a>
+                    <a href="http://huasheng.ustb.edu.cn/" target="_blank"><img src="/asset/pic/huasheng.png" alt=""
+                            style="width:95%;height: 58px; background-color: rgba(0, 0, 0, 0.5);"></a>
+                    <a href="https://gs.ustb.edu.cn/" target="_blank"><img src="/asset/pic/bk_master_logo.png" alt=""
+                        style="width: 95%;height: 58px; background-color: rgba(0, 0, 0, 0.5);"></a>
+                    <a href="https://lib.ustb.edu.cn/" target="_blank"><img src="/asset/pic/bk_library.png" alt=""
+                        style="width: 95%;height: 58px; background-color: rgba(0, 0, 0, 0.5);"></a>
+                </div>
+            </div>
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2024 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+    <script src="/asset/js/img-slider.js"></script>
+    <script src="/asset/js/ngl.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 创建NGL Stage对象
+            var stage = new NGL.Stage("nglViewer", { backgroundColor: "white" });
+
+            // 加载本地蛋白质模型文件
+            stage.loadFile("/asset/css/7YLQ_A.pdb", { defaultRepresentation: true }).then(function(comp) {
+                // 设置自动旋转
+                stage.setSpin(true);
+            }).catch(function(error) {
+                console.error("Error loading file:", error);
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

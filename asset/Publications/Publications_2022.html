@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+ .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+    max-width: 1200px; /* 设置一个最大宽度 */
+    margin: 0 auto;    /* 水平居中 */
+    animation: slideUp 1s ease-out;
+}
+
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+
+    #yearNavbar .navbar-nav .nav-link:hover {
+        color: #268ac8;
+    }
+
+    #yearNavbar .nav-link.active {
+        color: #268ac8;
+    }
+    #yearNavbar{
+        font-size: 3vh;
+    }
+    .Publications_p p {
+        margin-bottom: 5px;
+
+    }
+
+    .second_p {
+        color: #575757;
+    }
+     .first_p a{
+        text-decoration: none;
+        color: black;
+     }
+     .Publications_content {
+    justify-content: center;
+    display: flex;
+    width: 100%; /* 将宽度设置为100% */
+    max-width: 1200px; /* 设置一个最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border: none;
+    width: 100%; /* 卡片宽度为其容器的100% */
+    max-width: 1200px; /* 设置一个最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+    .card img {
+        border-radius: 50%;
+        margin-right: 2vw;
+    }
+
+    @media (max-width: 550px) {
+        .card img {
+            width: 30vw;
+            height: 30vw;
+        }
+
+        .Publications_p {
+            font-size: 3vw;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .card img {
+            width: 10vw;
+            height: 10vw;
+        }
+
+        .Publications_p {
+            font-size: 1.2vw;
+        }
+    }
+
+    @media (min-width: 550px) and (max-width: 1024px) {
+        .card img {
+            width: 15vw;
+            height: 15vw;
+        }
+
+        .Publications_p {
+            font-size: 1.8vw;
+        }
+    }
+   #yearNavbar .navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;  /* 防止链接换行 */
+}
+
+/* 小屏幕设置 */
+@media (max-width: 768px) {
+    #yearNavbar .navbar-nav {
+        flex-wrap: wrap; /* 允许换行 */
+    }
+    #yearNavbar .navbar-nav .nav-link {
+        flex: 0 0 33.33%; /* 设置每个链接占行宽的三分之一 */
+        text-align: center; /* 可选，使链接在其框内居中 */
+    }
+}
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html"
+                        style="text-decoration: none;color: white;"><b>Home</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a
+                        href="/asset/Publications/Publications_2022.html"
+                        style="text-decoration: none;color: white;"><b>Publications_2022</b></a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5">
+        <nav class="navbar navbar-expand navbar-light bg-light" id="yearNavbar">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="/asset/Publications/Publications_2024.html">2024</a>
+                        <a class="nav-link" href="/asset/Publications/Publications_2023.html">2023</a>
+                        <a class="nav-link active" href="/asset/Publications/Publications_2022.html">2022</a>
+                        <a class="nav-link" href="/asset/Publications/Publications_2021.html">2021</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- 右侧文章内容部分 -->
+        <div class="Publications_content row" style="justify-content: center; display: flex;">
+            <div class="card col-12 pb-4" style="display: flex; align-items: center; flex-direction: row;border: none;">
+                <a href="/asset/Publications/article/2022_01.html"><img src="/asset/pic/article_pic/fankun.webp"
+                        style="border-radius: 50%; margin-right: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" alt="..."></a>
+                <div class="Publications_p">
+                    <p class="first_p"><a href="/asset/Publications/article/2022_01.html"><b>Impacts of targeting different hydration free energy references on the development of ion potentials</b></a></p>
+                    <p class="second_p"><b>2022 | Journal article</b></p>
+                    <p class="second_p"><b>CONTRIBUTORS: Kun Fan; Yongguang Zhang; Yejie Qiu; Haiyang Zhang</b></p>
+                    <p class="second_p"><a href="https://doi.org/10.1039/d2cp01237e" class="second_p"
+                            target="_blank"><b>DOI: 10.1039/D2CP01237E</b></a></p>
+                </div>
+            </div>
+            <div class="card col-12 pb-4" style="display: flex; align-items: center; flex-direction: row;border: none;">
+                <a href="/asset/Publications/article/2022_02.html"><img src="/asset/pic/article_pic/molecules-27-08773-ag-550.webp"
+                        style="border-radius: 50%; margin-right: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" alt="..."></a>
+                <div class="Publications_p">
+                    <p class="first_p"><a href="/asset/Publications/article/2022_02.html"><b>Virtual Screening of FDA-Approved Drugs for Enhanced Binding with Mitochondrial Aldehyde Dehydrogenase</b></a></p>
+                    <p class="second_p"><b>2022-12-10 | Journal article</b></p>
+                    <p class="second_p"><b>CONTRIBUTORS: Boqian Zhou; Yongguang Zhang; Wanyun Jiang; Haiyang Zhang</b></p>
+                    <p class="second_p"><a href="https://doi.org/10.3390/molecules27248773" class="second_p"
+                            target="_blank"><b>DOI: 10.3390/molecules27248773</b></a></p>
+                </div>
+            </div>
+            <div class="card col-12 pb-4" style="display: flex; align-items: center; flex-direction: row;border: none;">
+                <a href="/asset/Publications/article/2022_03.html"><img src="/asset/pic/article_pic/materials-15-08456-ag-550.webp"
+                        style="border-radius: 50%; margin-right: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" alt="..."></a>
+                <div class="Publications_p">
+                    <p class="first_p"><a href="/asset/Publications/article/2022_03.html"><b>Grafting (S)-2-Phenylpropionic Acid on Coordinatively Unsaturated Metal Centers of MIL−101(Al) Metal–Organic Frameworks for Improved Enantioseparation</b></a></p>
+                    <p class="second_p"><b>2022-11-27 | Journal article</b></p>
+                    <p class="second_p"><b>CONTRIBUTORS: Rui Zhao; Xueyan Bai; Wenhui Yang; Kun Fan; Haiyang Zhang</b></p>
+                    <p class="second_p"><a href="https://doi.org/10.3390/ma15238456" class="second_p"
+                            target="_blank"><b>DOI: 10.3390/ma15238456</b></a></p>
+                </div>
+            </div>
+            <div class="card col-12 pb-4" style="display: flex; align-items: center; flex-direction: row;border: none;">
+                <a href="/asset/Publications/article/2022_04.html"><img src="/asset/pic/article_pic/molecules-27-02110-g001-550.webp"
+                        style="border-radius: 50%; margin-right: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" alt="..."></a>
+                <div class="Publications_p">
+                    <p class="first_p"><a href="/asset/Publications/article/2022_04.html"><b>Atomistic Simulation of Lysozyme in Solutions Crowded by Tetraethylene Glycol: Force Field Dependence</b></a></p>
+                    <p class="second_p"><b>2022-03 | Journal article</b></p>
+                    <p class="second_p"><b>CONTRIBUTORS: donglin liu; Yejie Qiu; Qing Li; Haiyang Zhang</b></p>
+                    <p class="second_p"><a href="https://doi.org/10.3390/molecules27072110" class="second_p"
+                            target="_blank"><b>DOI: 10.3390/molecules27072110</b></a></p>
+                </div>
+            </div>
+            <div class="card col-12 pb-4" style="display: flex; align-items: center; flex-direction: row;border: none;">
+                <a href="/asset/Publications/article/2022_05.html"><img src="/asset/pic/article_pic/images_medium_ao2c00032_0012.webp"
+                        style="border-radius: 50%; margin-right: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" alt="..."></a>
+                <div class="Publications_p">
+                    <p class="first_p"><a href="/asset/Publications/article/2022_05.html"><b>Computational Investigation of Structural Basis for Enhanced Binding of Isoflavone Analogues with Mitochondrial Aldehyde Dehydrogenase</b></a></p>
+                    <p class="second_p"><b>2022-03-08 | Journal article</b></p>
+                    <p class="second_p"><b>CONTRIBUTORS: Yongguang Zhang; Yejie Qiu; Haiyang Zhang</b></p>
+                    <p class="second_p"><a href="https://doi.org/10.1021/acsomega.2c00032" class="second_p"
+                            target="_blank"><b>DOI: 10.1021/acsomega.2c00032</b></a></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

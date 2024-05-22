@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zhang_lab</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+    .teacher-right {
+    padding: 20px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.teacher-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.teacher-header p {
+    font-size: 16px;
+    color: #555;
+}
+
+.teacher-info,
+.teacher-experience,
+.teacher-foundation,
+.teacher-awards,
+.teacher-left-contact {
+    margin-top: 20px;
+}
+
+.teacher-info h3,
+.teacher-experience h3, 
+.teacher-foundation h3,
+.teacher-awards h3,
+.teacher-left-contact h3{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.teacher-header h3{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 10px
+}
+.teacher-info p,
+.teacher-experience p, 
+.teacher-foundation p,
+.teacher-awards p,
+.teacher-left-contact p{
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+.container{
+    font-family: "Candara", sans-serif !important;
+}
+
+@media (max-width: 768px) {
+    .teacher-left,
+    .teacher-right {
+        padding: 20px;
+        margin: 0 auto;
+    }
+    .teacher_container{
+        padding: 0 !important;
+    }
+    .teacher-left-img{
+        width: 60%;
+    }
+}
+
+@media (max-width: 576px) {
+    .teacher-left,
+    .teacher-right {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .teacher_container{
+        padding: 0 !important;
+    }
+    .teacher-left-img{
+        width: 60%;
+    }
+}
+@media (min-width:1025px){
+    .teacher-left-img{
+        width: 200px;
+    }
+}
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/asset/Publications/Publications_2024.html">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html"
+                        style="text-decoration: none;color: white;"><b>Home</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/member.html"
+                        style="text-decoration: none;color: white;"><b>Members</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/asset/Members/zhy.html"
+                        style="text-decoration: none;color: white;"><b>Haiyang Zhang</b></a></li> <!-- 修改 --> 
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5 ">
+        <div class="p-5 row teacher_container">
+        <div class="teacher-left col-md-3 col-sm-3 col-xs-12 ">
+            <div class="teacher-left-img"><img src="/asset/pic/headshot/zhy.jpeg" width="100%"></div>
+            <div class="teacher-left-contact">
+                <h3>Contact</h3>
+                <p>zhanghy@ustb.edu.cn</p><!-- 修改 -->
+                <p>Office location: 理学楼 112B</p>
+            </div>
+            
+        </div>
+        <div class="teacher-right col-md-9 col-sm-9 col-xs-12">
+            <div class="teacher-header">
+                <h2>Haiyang Zhang（张海洋）</h2>
+                <h3>Associate Professor</h3>
+            </div>
+            <div class="teacher-info">
+                <h3>Personal Information</h3>
+                <p>Associate Professor, School of Chemistry and Biological Engineering</p>
+                <p>University of Science and Technology Beijing, Beijing, 100083</p>
+                <p>People's Republic of China</p>
+                <p>E-mail: zhanghy@ustb.edu.cn</p>
+                <p>Research Directions: Computational simulation of biomolecules (Protein structure and function regulation; Supramolecular recognition and self-assembly; Development and evaluation of force field parameters)</p>
+            </div>
+            <div class="teacher-experience">
+                <h3>Experiences</h3>
+                <p>Bachelor's Degree, September 2003 - June 2007, Information and Computational Science, School of Science, Beijing University of Chemical Technology, Beijing, China</p>
+                <p>Ph.D., September 2007 - January 2015, School of Life Science and Technology, Beijing University of Chemical Technology, Beijing, China</p>
+                <p>Joint Ph.D. Student, September 2010 - September 2012, Computational Systems Biology, Uppsala University, Uppsala, Sweden</p>
+                <p>Postdoctoral Researcher, January 2015 - June 2017, School of Chemistry and Biological Engineering, University of Science and Technology Beijing, Beijing, China</p>
+                <p>Assistant Professor, July 2017 - Present, Department of Biological Science and Engineering, School of Chemistry and Biological Engineering, University of Science and Technology Beijing, Beijing, China</p>
+            </div>
+            <div class="teacher-foundation">
+                <h3>Foundation</h3>
+                <p>Hosted: National Natural Science Foundation of China Youth Project (1 project)</p>
+                <p>Hosted: Beijing Natural Science Foundation Youth Project (1 project)</p>
+                <p>Hosted: Postdoctoral Fund General Project (1 project)</p>
+                <p>Hosted: Central Universities Scientific Research Fund (2 projects)</p>
+                <p>Participated in: National Natural Science Foundation General Project (1 project)</p>
+            </div>
+            <div class="teacher-awards">
+                <h3>Awards</h3>
+                <p>Outstanding Postdoctoral Researcher, University of Science and Technology Beijing,December 2017</p>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课题组首页</title>
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/asset/js/jquery.min.js"></script>
+    <script src="/asset/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .zero-image {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/asset/pic/ding.webp');
+        background-size: cover;
+        background-position: center;
+        animation: slideUp 1s ease-out 0s;
+    }
+
+    .breadcrumb{
+        padding-top: 10vh;
+    }
+    .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+        content: var(--bs-breadcrumb-divider, '/') ' ';
+        color: white;
+    }
+
+    .navbar-brand {
+        font-size: 28px;
+        font-family: 'Monotype Corsiva', cursive;
+
+    }
+
+    .navbar-brand img {
+        width: 220px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 23px;
+            /* 减小字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 180px;
+            /* 减小图片宽度 */
+        }
+    }
+
+    /* 更小的屏幕，例如手机竖屏 */
+    @media (max-width: 480px) {
+        .navbar-brand {
+            font-size: 20px;
+            /* 更小的字体大小 */
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            /* 更小的图片宽度 */
+        }
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        color: #333;
+    }
+
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(200%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .zero-image {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .container {
+        animation: slideUp 1s ease-out;
+    }
+
+    .end_part {
+        animation: slideUp 1s ease-out;
+    }
+    .member-left-contact h4 {
+
+    padding: 20px 0px 0px 0px;
+
+}
+
+.member-left-contact p {
+    font-size: 16px;
+    color: #555;
+    padding: 8px 0;
+}
+
+.member-right h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.member-right h3 {
+    font-size: 24px;
+    color: #268ac8;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.member-right p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+</style>
+
+<body>
+    <div class="zero-image">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html"><img src="/asset/pic/bk_logo.png" alt=""
+                        >&nbsp;&nbsp;&nbsp;<b>Zhang
+                        Lab</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/asset/Publications/Publications_2024.html">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/News.html">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  active" href="/member.html">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admission.html">Admission</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav aria-label="breadcrumb" class="px-5 pb-2" id="breadcrumbNav" style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html"
+                        style="text-decoration: none;color: white;"><b>Home</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/member.html"
+                        style="text-decoration: none;color: white;"><b>Members</b></a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/asset/Members/修改.html"
+                        style="text-decoration: none;color: white;"><b>修改</b></a></li> <!-- 1修改两处 第一处名字拼音首字母（eg.ml）第二处名字拼音，名在前姓在后，加空格(eg.le ma)-->
+            </ol>
+        </nav>
+    </div>
+    <div class="container pt-5 ">
+        <div class="p-5 row">
+            <div class="member-left col-md-3 col-sm-3 col-xs-12 ">
+                <div class="member-left-img"><img src="/asset/pic/headshot/修改.jpg" width="200px"></div><!-- 2修改 名字拼音首字母（eg.ml）-->
+                <div class="member-left-contact">
+                    <h4>Contact</h4>
+                    <p>修改</p><!-- 3修改邮箱，<p></p>之间的内容，北科邮箱 -->
+                </div>
+            </div>
+            <div class="member-right col-md-9 col-sm-9 col-xs-12">
+                <div id="member-right-contact">
+                    <h2>Le Ma（马乐）</h2><!-- 4修改名字，<h2></h2>之间的内容 （eg.Le Ma（马乐））-->
+                    <h3>Experiences</h3>
+                    <p>B.Eng.,2018-2022, xxx University, xxx City, China</p><!-- 5修改学术经历本科，<p></p>之间的内容 （B.Eng.工学学士 B.Sc.理学学士）-->
+                    <p>M.Eng.,2022-current, University of Science and Technology Beijing, Beijing, China</p><!-- 6修改学术经历硕士，<p></p>之间的内容 （M.Eng.工学硕士 M.Sc.理学硕士）-->
+                    <h3>Research Interests</h3>
+                    <p>修改</p><!-- 7修改研究方向，<p></p>之间的内容 -->
+                    <h3>Hobbies</h3>
+                    <p>修改</p><!-- 8修改兴趣爱好，<p></p>之间的内容 -->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="mt-5 end_part" style="font-size: small;">
+        <div class="">
+            <div class="pt-3" style="text-align: center;  justify-content: center;">
+                <p style="margin: 0;">© 2023 Zhang Lab</p>
+                <p style="margin: 0;">School of Chemistry and Biological Engineering</p>
+                <p style="margin: 0;">Email: zhanghy@ustb.edu.cn</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
